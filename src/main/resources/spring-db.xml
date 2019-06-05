@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ctx="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- https://camel.apache.org/sql-component.html -->
+    <!-- https://people.apache.org/~dkulp/camel/sql-component.html -->
+    <bean id="ds_mssql" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+        <property name="url" value="jdbc:sqlserver://192.168.99.100:1433;databaseName=test;" />
+        <property name="username" value="sa" />
+        <property name="password" value="Test1234!" />
+    </bean>
+
+</beans>
