@@ -1,19 +1,18 @@
 package my.apache.camel;
 
-import org.apache.camel.test.spring.CamelSpringTestSupport;
+import org.apache.camel.RoutesBuilder;
+import org.apache.camel.test.junit4.CamelTestSupport;
 import org.junit.Test;
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class MyRouteBuilderTest extends CamelSpringTestSupport {
+public class MyRouteBuilderTest extends CamelTestSupport {
 
     @Override
-    protected AbstractApplicationContext createApplicationContext() {
-        return new ClassPathXmlApplicationContext("spring.xml");
+    protected RoutesBuilder createRouteBuilder() throws Exception {
+        return new MyRouteBuilder();
     }
 
     @Test
     public void test() throws Exception {
-        Thread.sleep(600000);
+        context().createProducerTemplate().sendBody("direct:execTest", "test");
     }
 }

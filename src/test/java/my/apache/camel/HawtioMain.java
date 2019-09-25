@@ -1,10 +1,7 @@
 package my.apache.camel;
 
-import org.springframework.stereotype.Component;
-
 import io.hawt.embedded.Main;
 
-@Component
 public class HawtioMain {
 
     public HawtioMain() throws Exception {

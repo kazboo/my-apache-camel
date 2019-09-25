@@ -17,7 +17,7 @@ repositories {
 }
 
 ext {
-    camelVersion = '2.24.0'
+    camelVersion = '3.0.0-RC1'
     slf4jVersion = '1.7.26'
     mssqlJdbcVersion = '7.2.2.jre8'
     hawtioVersion = '2.6.0'
@@ -32,13 +32,14 @@ dependencies {
     implementation group: 'org.apache.camel', name: 'camel-core', version: camelVersion
     implementation group: 'org.apache.camel', name: 'camel-spring', version: camelVersion
     implementation group: 'org.apache.camel', name: 'camel-sql', version: camelVersion
+    implementation group: 'org.apache.camel', name: 'camel-exec', version: camelVersion
+
     implementation group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: mssqlJdbcVersion
 
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
     testImplementation group: 'org.apache.camel', name: 'camel-test', version: camelVersion
-    testImplementation group: 'org.apache.camel', name: 'camel-test-spring', version: camelVersion
     testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: slf4jVersion
     testImplementation group: 'io.hawt', name: 'hawtio-embedded', version: hawtioVersion
 
